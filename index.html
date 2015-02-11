@@ -1,0 +1,653 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mobile Application</title>
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+
+<style>
+.ui-content1 {
+    border-width: 0 !important;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+    padding: 0 !important;
+}
+</style>
+<style>
+/* Swipe works with mouse as well but often causes text selection. */
+/* We'll deny text selecton on everything but INPUTs and TEXTAREAs. */
+#demo-page :not(INPUT):not(TEXTAREA) {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+
+</style>
+
+<style>
+
+/*These apply across all breakpoints because they are outside of a media query */
+table.phone-compare thead th {
+    background-color: #fff;
+}
+table.phone-compare thead th h4 {
+    text-transform: uppercase;
+    font-size: 0.6em;
+    margin: 0;
+}
+table.phone-compare thead th h3 {
+    font-size: .9em;
+    margin: -.4em 0 .8em 0;
+}
+table.phone-compare th.label {
+    text-transform: uppercase;
+    font-size: 0.6em;
+    opacity: 0.5;
+    padding: 1.2em .8em;
+    background-color: #ddd;
+}
+table.phone-compare tbody tr.photos td {
+    background-color: #fff;
+    padding: 0;
+}
+table.phone-compare tbody tr.photos img {
+    max-width: 100%;
+    min-width: 60px;
+}
+/*  Use the target selector to style the column chooser button */
+a[href="#phone-table-popup"] {
+    margin-bottom: 1.2em;
+}
+/* Show priority 1 at 320px (20em x 16px) */
+@media screen and (min-width: 20em) {
+    .phone-compare th.ui-table-priority-1,
+    .phone-compare td.ui-table-priority-1 {
+        display: table-cell;
+    }
+}
+/* Show priority 2 at 560px (35em x 16px) */
+@media screen and (min-width: 35em) {
+    .phone-compare th.ui-table-priority-2,
+    .phone-compare td.ui-table-priority-2 {
+        display: table-cell;
+    }
+}
+/* Show priority 3 at 720px (45em x 16px) */
+@media screen and (min-width: 45em) {
+    .phone-compare th.ui-table-priority-3,
+    .phone-compare td.ui-table-priority-3 {
+        display: table-cell;
+    }
+}
+/* Manually hidden */
+.phone-compare th.ui-table-cell-hidden,
+.phone-compare td.ui-table-cell-hidden {
+    display: none;
+}
+/* Manually shown */
+.phone-compare th.ui-table-cell-visible,
+.phone-compare td.ui-table-cell-visible {
+    display: table-cell;
+}
+
+
+</style>
+</head>
+<body>
+<div data-url="Ticket Booking" data-role="page" class="jqm-demos ui-responsive-panel" id="demo-page" data-title="Panel responsive page">
+    <!-- /header -->
+    <div data-role="header" data-position="fixed" data-theme="b" style="background-color:#000097; color:#FFF;">
+        <h1>Ticket New</h1>
+        <a href="#nav-panel1" data-icon="bars" data-iconpos="notext">Menu</a>
+        <a href="#add-form1" data-icon="gear" data-iconpos="notext">Add</a>
+    </div>	
+    <!-- /header -->
+    <!--content--->
+  	<div data-role="content" class="ui-content1" style="margin-top:-17px;">
+    	<ul data-role="listview" data-split-icon="gear" data-split-theme="a" data-inset="true">
+            <li><a onclick="new_page()">
+                <img src="images/m1.png">
+            <h2>Hulk showTime</h2>
+            <p>9AM&emsp;1AM&emsp;6AM&emsp;9PM</p></a>
+                <a href="#purchase1" data-rel="popup" data-position-to="window" data-transition="pop" style="background-color:orange;">Purchase album</a>
+            </li>
+            <li><a href="#">
+                <img src="images/m2.png">
+            <h2>Avatar showTime</h2>
+            <p>9AM&emsp;1AM&emsp;6AM&emsp;9PM</p></a>
+                <a href="#purchase1" data-rel="popup" data-position-to="window" data-transition="pop" style="background-color:orange;">Purchase album</a>
+            </li>
+            <li><a href="#">
+                <img src="images/m3.png">
+            <h2>Animation showTime </h2>
+            <p>9AM&emsp;1AM&emsp;6AM&emsp;9PM</p></a>
+                <a href="#purchase1" data-rel="popup" data-position-to="window" data-transition="pop" style="background-color:orange;">Purchase album</a>
+            </li>
+             <li><a href="#">
+                <img src="images/m4.png">
+            <h2>Hangover showTime</h2>
+            <p>9AM&emsp;1AM&emsp;6AM&emsp;9PM</p></a>
+                <a href="#purchase1" data-rel="popup" data-position-to="window" data-transition="pop" style="background-color:orange;">Purchase album</a>
+            </li>
+             <li><a href="#">
+                <img src="images/m5.png">
+            <h2>Terminator showTime</h2>
+            <p>9AM&emsp;1AM&emsp;6AM&emsp;9PM</p></a>
+                <a href="#purchase1" data-rel="popup" data-position-to="window" data-transition="pop" style="background-color:orange;">Purchase album</a>
+            </li>
+            <li><a href="#">
+                <img src="images/m6.png">
+            <h2>I showTime</h2>
+            <p>9AM&emsp;1AM&emsp;6AM&emsp;9PM</p></a>
+                <a href="#purchase1" data-rel="popup" data-position-to="window" data-transition="pop" style="background-color:orange;">Purchase album</a>
+            </li>
+        </ul>
+        <!--Images codeing-->
+        <div data-role="popup" id="purchase1" data-theme="a" data-overlay-theme="b" class="ui-content1">
+        	<h3 style="text-align:center;">Purchase Ticket</h3>
+        	<p>Your download will begin immediately on your mobile device when you purchase.</p>
+            <a href="index.html" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-check ui-btn-icon-left ui-btn-inline ui-mini">Buy: &#2352;&nbsp;100</a>
+            <a href="index.html" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini">Cancel</a>
+        </div>
+        
+	  	<a href="#" id="page1" data-rel="back" data-ajax="false" style="background-color:#F84754; color:#FFF; margin-top:-17px;" class="ui-btn ui-corner-all">Back</a>
+    	
+    </div>
+	<!-- /content -->
+    <div data-role="footer" style="margin-top:-10px;">
+    	<h4>Mobile application</h4>
+    </div>
+   
+    <div data-role="panel" data-display="push" data-theme="b" id="left-panel">
+        <ul data-role="listview">
+            <li data-icon="delete"><a href="#" data-rel="close" class="ui-btn ui-corner-all ui-shadow ui-mini ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-right">Close</a></li>
+            <li><a href="#demo-page1">About Us</a></li>
+            <li><a href="#demo-page2">Canteen</a></li>
+            <li><a href="#demo-page3">Futures</a></li>
+			<li><a href="#demo-page4">Contact us</a></li>
+       
+		</ul>
+    </div>
+  
+        
+    <div data-role="panel" data-position="right" data-display="reveal" data-theme="b" id="right-panel">
+        <form class="userform">
+            <h2>Login</h2>
+            <label for="name">Username:</label>
+            <input name="name" id="name" value="" data-clear-btn="true" data-mini="true" type="text">
+            <label for="password">Password:</label>
+            <input name="password" id="password" value="" data-clear-btn="true" autocomplete="off" data-mini="true" type="password">
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini">Cancel</a></div>
+                <div class="ui-block-b"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">Save</a></div>
+            </div>
+        </form>
+    </div>
+	<!-- /panel -->
+</div>
+
+
+<div data-url="Ticket Booking" data-role="page" class="jqm-demos ui-responsive-panel" id="demo-page1" data-title="Panel responsive page">
+    <!-- /header -->
+    <div data-role="header">
+        <h1>Sample Apps</h1>
+        <a href="#nav-panel2" data-icon="bars" data-iconpos="notext">Menu</a>
+        <a href="#add-form12" data-icon="gear" data-iconpos="notext">Add</a>
+   	</div>	
+    <!-- /header -->
+    <!--content--->
+  	<div data-role="content">
+    	<h3 style="color:#F00; margin-top:-6px;">Santhi theatre movies</h3>
+    	<img class="popphoto" src="images/theatre2.png" style="height:298; width:100%; margin-top:-12px;" alt="">
+        <img class="popphoto" src="images/theatre1.png" style="height:298; width:100%; margin-top:6px;" alt="">
+        <p style="color:#007; text-align:justify;">I have an id of "one" on my page container. I'm first in the source order so I'm shown when the page loads.</p>
+        <p style="color:#007; text-align:justify;">This is a multi-page boilerplate template that you can copy to build your first jQuery Mobile page. This template contains multiple "page" containers inside, unlike a single page template that has just one page within it.</p>
+        
+        <div class="elements" data-filter="true" data-input="#divOfPs-input">
+            <p><strong>These</strong> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</p>
+            <p><strong>tags</strong> nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam</p>
+            <p><strong>Tags</strong> erat, sed diam voluptua. At vero eos et accusam et justo duo dolores </p>
+        </div>
+        <a href="#popupVideo1" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" style="background-color:#000; color:#FFF;">Tamil</a>
+        <a href="#popupVideo2" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" style="background-color:#000; color:#FFF;">Hindi</a>
+        <a href="#popupVideo3" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" style="background-color:#000; color:#FFF;">English</a>
+        <div data-role="popup" id="popupVideo1" class="ui-content">
+        	<iframe height="298" width="100%" src="https://www.youtube.com/embed/B7c87SWQg-Y" frameborder="0" allowfullscreen></iframe>
+    	</div>
+        <div data-role="popup" id="popupVideo2" class="ui-content">
+        	<iframe height="298" width="100%" src="https://www.youtube.com/embed/K9vFWA1rnWc" frameborder="0" allowfullscreen></iframe>
+    	</div>
+        <div data-role="popup" id="popupVideo3" class="ui-content">
+        	<iframe height="298" width="100%" src="https://www.youtube.com/embed/FsN1EO9LbAM" frameborder="0" allowfullscreen></iframe>
+    	</div>
+		
+		<a href="#" id="demo-page" data-rel="back" data-ajax="false" style="background-color:#F84754; color:#FFF; margin-top:-8px; margin-left:-16px; margin-right:-16px;" class="ui-btn ui-corner-all">Back</a>       
+  
+    </div>
+	<!-- /content -->
+    <div data-role="footer" style="margin-top:-24px;">
+    	<h4>Mobile application</h4>
+    </div>
+    
+    <div data-role="panel" data-display="push" data-theme="b" id="nav-panel2">
+        <ul data-role="listview">
+            <li data-icon="delete"><a href="#" data-rel="close">Close</a></li>
+            <li><a href="#demo-page1">About Us</a></li>
+            <li><a href="#demo-page2">Canteen</a></li>
+            <li><a href="#demo-page3">Futures</a></li>
+			<li><a href="#demo-page4">Contact us</a></li>
+            
+		</ul>
+    </div><!-- /panel -->
+    
+    <div data-role="panel" data-position="right" data-display="reveal" data-theme="a" id="add-form12">
+        <form class="userform">
+            <h2>Login</h2>
+            <label for="name">Username:</label>
+            <input name="name" id="name" value="" data-clear-btn="true" data-mini="true" type="text">
+            <label for="password">Password:</label>
+            <input name="password" id="password" value="" data-clear-btn="true" autocomplete="off" data-mini="true" type="password">
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini">Cancel</a></div>
+                <div class="ui-block-b"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">Save</a></div>
+            </div>
+        </form>
+    </div><!-- /panel -->
+    
+</div>
+
+
+<div data-url="panel-responsive-page1" data-role="page" class="jqm-demos ui-responsive-panel" id="demo-page2" data-title="Panel responsive page">
+    <!-- /header -->
+    <div data-role="header">
+        <h1>Sample Apps</h1>
+        <a href="#nav-panel3" data-icon="bars" data-iconpos="notext">Menu</a>
+        <a href="#add-form13" data-icon="gear" data-iconpos="notext">Add</a>
+   	</div>	
+    <!-- /header -->
+    <!--content--->
+  	<div data-role="content" class="ui-content1">
+    	<table margin="0" class="table-stroke" style="width:100%; background-color:#595900; color:#FFF;">
+            <tbody><tr>
+                <th><h3 style="text-align:left;">Tea</h3></th>
+                <td><a href="#dialog1" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Rate</a>
+                <div data-role="popup" id="dialog1" data-theme="a" data-overlay-theme="b" class="ui-content1" style="max-width:340px; padding-bottom:2em;">
+                    <div class="ui-dialog-contain ui-overlay-shadow ui-corner-all" role="dialog">
+                        <div class="ui-header ui-bar-b" data-theme="b" data-role="header" role="banner">
+                        <a class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-notext ui-btn-left" role="button" href="#page4" data-transition="pop" data-direction="reverse">Close</a>
+                        <h1 class="ui-title" role="heading" aria-level="1" style="margin-left:46px;">Tea Rates&variety</h1>
+                        </div>
+                        <div class="ui-content" role="main">
+                        	 <ul data-role="listview"  data-split-theme="a" data-inset="true">
+                                 <li>
+                                 	<a href="#">
+                                    <img class="popphoto" src="images/tea1.png" style="width:32%; height:100px;" alt="">
+                                    <h2>Blocktea</h2>
+                                    <p>&#2352;&nbsp;40</p></a>
+                                 </li>			
+                              </ul>
+                              <ul data-role="listview"  data-split-theme="a" data-inset="true">
+                                 <li>
+                                 	<a href="#">
+                                    <img class="popphoto" src="images/tea2.png" style="width:32%; height:100px;" alt="">
+                                    <h2>Zingertea</h2>
+                                    <p>&#2352;&nbsp;50</p></a>
+                                 </li>			
+                              </ul>
+                              
+                        <a class="ui-btn ui-corner-all ui-shadow ui-btn-b" data-rel="back" href="index.html" data-transition="fade" data-direction="reverse">Take me back</a>
+                        </div>
+                  </div>
+              </div></td>
+                <td><a onclick="buy()" data-transition="fade" data-role="button" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Purchase</a></td>
+            </tr>
+            <tr>
+                <th><h3 style="text-align:left;">Coffee</h3></th>
+                <td><a href="#dialog2" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Rate</a>
+                <div data-role="popup" id="dialog2" data-theme="a" data-overlay-theme="b" class="ui-content1" style="max-width:340px; padding-bottom:2em;">
+                    <div class="ui-dialog-contain ui-overlay-shadow ui-corner-all" role="dialog">
+                        <div class="ui-header ui-bar-b" data-theme="b" data-role="header" role="banner">
+                        <a class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-notext ui-btn-left" role="button" href="#page4" data-transition="pop" data-direction="reverse">Close</a>
+                        <h1 class="ui-title" role="heading" aria-level="1" style="margin-left:46px;">Coffee Rates</h1>
+                        </div>
+                        <div class="ui-content" role="main">
+                        	 <ul data-role="listview"  data-split-theme="a" data-inset="true">
+                                 <li>
+                                 	<a href="#">
+                                    <img class="popphoto" src="images/tea1.png" style="width:32%; height:100px;" alt="">
+                                    <h2>Brucoffee</h2>
+                                    <p>&#2352;&nbsp;60</p></a>
+                                 </li>			
+                              </ul>
+                              <ul data-role="listview"  data-split-theme="a" data-inset="true">
+                                 <li>
+                                 	<a href="#">
+                                    <img class="popphoto" src="images/tea2.png" style="width:32%; height:100px;" alt="">
+                                    <h2>Cofee</h2>
+                                    <p>&#2352;&nbsp;70</p></a>
+                                 </li>			
+                              </ul>
+                              
+                        <a class="ui-btn ui-corner-all ui-shadow ui-btn-b" data-rel="back" href="index.html" data-transition="fade" data-direction="reverse">Take me back</a>
+                        </div>
+                  </div>
+              </div></td>
+                <td><a href="transitions.html" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Purchase</a></td>
+            </tr>
+            <tr>
+                <th><h3 style="text-align:left;">Cool drinks</h3></th>
+                <td><a href="#dialog3" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Rate</a>
+                <div data-role="popup" id="dialog3" data-theme="a" data-overlay-theme="b" class="ui-content1" style="max-width:340px; padding-bottom:2em;">
+                    <div class="ui-dialog-contain ui-overlay-shadow ui-corner-all" role="dialog">
+                        <div class="ui-header ui-bar-b" data-theme="b" data-role="header" role="banner">
+                        <a class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-notext ui-btn-left" role="button" href="#page4" data-transition="pop" data-direction="reverse">Close</a>
+                        <h1 class="ui-title" role="heading" aria-level="1" style="margin-left:46px;">Cooldrinks Rates</h1>
+                        </div>
+                        <div class="ui-content" role="main">
+                        	 <ul data-role="listview"  data-split-theme="a" data-inset="true">
+                                 <li>
+                                 	<a href="#">
+                                    <img class="popphoto" src="images/c1.png" style="width:32%; height:100px;" alt="">
+                                    <h2>Lemon</h2>
+                                    <p>&#2352;&nbsp;60</p></a>
+                                 </li>			
+                              </ul>
+                              <ul data-role="listview"  data-split-theme="a" data-inset="true">
+                                 <li>
+                                 	<a href="#">
+                                    <img class="popphoto" src="images/c2.png" style="width:32%; height:100px;" alt="">
+                                    <h2>Cocacola</h2>
+                                    <p>&#2352;&nbsp;70</p></a>
+                                 </li>			
+                              </ul>
+                              
+                        <a class="ui-btn ui-corner-all ui-shadow ui-btn-b" data-rel="back" href="index.html" data-transition="fade" data-direction="reverse">Take me back</a>
+                        </div>
+                  </div>
+              </div></td>
+                <td><a href="page-transitions-page.html" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Purchase</a></td>
+            </tr>
+            <tr>
+                <th><h3 style="text-align:left;">Tiffen</h3></th>
+                <td><a href="#dialog1" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Rate</a></td>
+                <td><a href="page-transitions-page.html" data-transition="turn" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Purchase</a></td>
+            </tr>
+            <tr>
+                <th><h3 style="text-align:left;">Lunch</h3></th>
+                <td><a href="#dialog1" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Rate</a></td>
+                <td><a href="page-transitions-page.html" data-transition="flow" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Purchase</a></td>
+            </tr>
+            <tr>
+                <th><h3 style="text-align:left;">Snacks</h3></th>
+                <td><a href="#dialog1" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Rate</a></td>
+                <td><a href="page-transitions-page.html" data-transition="slidefade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Purchase</a></td>
+            </tr>
+            <tr>
+                <th><h3 style="text-align:left;">Chicken</h3></th>
+                <td><a href="#dialog1" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Rate</a></td>
+                <td><a href="page-transitions-page.html" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Purchase</a></td>
+            </tr>
+            <tr>
+                <th><h3 style="text-align:left;">Chocolate</h3></th>
+                <td><a href="#dialog1" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Rate</a></td>
+                <td><a href="page-transitions-page.html" data-transition="slideup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Purchase</a></td>
+            </tr>
+            
+        </tbody>
+    </table>
+		
+   	  	<a href="#demo-page1" id="page1" data-rel="back" data-ajax="false" style="background-color:#F84754; color:#FFF; margin-top:-1px;" class="ui-btn ui-corner-all">Back</a>
+  
+    </div>
+	<!-- /content -->
+    <div data-role="footer" style="margin-top:-9px;">
+    	<h4>Mobile application</h4>
+    </div>
+    
+    <div data-role="panel" data-display="push" data-theme="b" id="nav-panel3">
+        <ul data-role="listview">
+            <li data-icon="delete"><a href="#" data-rel="close">Close</a></li>
+            <li><a href="#demo-page1">About Us</a></li>
+            <li><a href="#demo-page2">Canteen</a></li>
+            <li><a href="#demo-page3">Futures</a></li>
+			<li><a href="#demo-page4">Contact us</a></li>
+            
+		</ul>
+    </div><!-- /panel -->
+    
+    <div data-role="panel" data-position="right" data-display="reveal" data-theme="a" id="add-form13">
+        <form class="userform">
+            <h2>Login</h2>
+            <label for="name">Username:</label>
+            <input name="name" id="name" value="" data-clear-btn="true" data-mini="true" type="text">
+            <label for="password">Password:</label>
+            <input name="password" id="password" value="" data-clear-btn="true" autocomplete="off" data-mini="true" type="password">
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini">Cancel</a></div>
+                <div class="ui-block-b"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">Save</a></div>
+            </div>
+        </form>
+    </div><!-- /panel -->
+    
+</div>
+
+
+<div data-url="panel-responsive-page1" data-role="page" class="jqm-demos ui-responsive-panel" id="demo-page3" data-title="Panel responsive page">
+    <!-- /header -->
+    <div data-role="header">
+        <h1>Sample Apps</h1>
+        <a href="#nav-panel4" data-icon="bars" data-iconpos="notext">Menu</a>
+        <a href="#add-form14" data-icon="gear" data-iconpos="notext">Add</a>
+   	</div>	
+    <!-- /header -->
+    <!--content--->
+  	<div data-role="content">
+    	<div data-role="collapsibleset" data-theme="a" data-content-theme="a" style="margin:-16px;">
+            <div data-role="collapsible">
+                <h3>Udayam Complex A/C&nbsp;dts</h3>
+            <p>I'm the collapsible content for section 1</p>
+            </div>
+            <div data-role="collapsible">
+                <h3>Abirami Mahal A/C&nbsp;dts</h3>
+            <p>I'm the collapsible content for section 2</p>
+            </div>
+            <div data-role="collapsible">
+                <h3>S2 Cinemas A/C&nbsp;dts</h3>
+            <p>I'm the collapsible content for section 3</p>
+            </div>
+            <div data-role="collapsible">
+                <h3>Parvathi complex A/C&nbsp;dts</h3>
+            <p>I'm the collapsible content for section 3</p>
+            </div>
+            <div data-role="collapsible"> 
+                <h3>Esther complex A/C&nbsp;dts</h3>
+            <p>I'm the collapsible content for section 3</p>
+            </div>
+        </div>
+		<h3 style="color:#F00; margin-top:22px;">Fetures Movies</h3>
+    	<p style="color:#007; text-align:justify;">I have an id of "one" on my page container. I'm first in the source order so I'm shown when the page loads.</p>
+       <!-- <iframe height="298" width="100%" src="https://www.youtube.com/embed/B7c87SWQg-Y" frameborder="0" allowfullscreen></iframe><br />
+        <iframe height="298" width="100%" src="https://www.youtube.com/embed/K9vFWA1rnWc" frameborder="0" allowfullscreen></iframe><br />
+        <iframe height="298" width="100%" src="https://www.youtube.com/embed/FsN1EO9LbAM" frameborder="0" allowfullscreen></iframe>-->
+        <p style="color:#007; text-align:justify;">This is a multi-page boilerplate template that you can copy to build your first jQuery Mobile page. This template contains multiple "page" containers inside, unlike a single page template that has just one page within it.</p>
+        
+		<div data-role="content" style="margin-left:-30px; margin-right:-30px;">
+        	<iframe height="298" width="100%" src="https://www.youtube.com/embed/B7c87SWQg-Y" frameborder="0" allowfullscreen></iframe>
+            <p style="text-align:center; color:#F00;margin-bottom:-17px;">Yennai aridhalmovie Trailer</p>
+    	</div>
+        <div data-role="content" style="margin-left:-30px; margin-right:-30px;">
+        	<iframe height="298" width="100%" src="https://www.youtube.com/embed/K9vFWA1rnWc" frameborder="0" allowfullscreen></iframe>
+            <p style="text-align:center; color:#F00;margin-bottom:-17px;">Hindi Movie Trailer</p>
+    	</div>
+        <div data-role="content" style="margin-left:-30px; margin-right:-30px;">
+        	<iframe height="298" width="100%" src="https://www.youtube.com/embed/FsN1EO9LbAM" frameborder="0" allowfullscreen></iframe>
+            <p style="text-align:center; color:#F00;margin-bottom:-17px;">English Movie Trailer</p>
+    	</div>
+        
+        <a href="#demo-page2" id="" data-rel="back" data-ajax="false" style="background-color:#F84754; color:#FFF; margin-top:9px; margin-left:-16px; margin-right:-16px;" class="ui-btn ui-corner-all">Back</a>       
+  
+    </div>
+  
+	<!-- /content -->
+    <div data-role="footer" style="margin-top:-24px;">
+    	<h4>Mobile application</h4>
+    </div>
+    
+    <div data-role="panel" data-display="push" data-theme="b" id="nav-panel4">
+        <ul data-role="listview">
+            <li data-icon="delete"><a href="#" data-rel="close" class="ui-btn ui-corner-all ui-shadow ui-mini ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-right">Close</a></li>
+            <li><a href="#demo-page1">About Us</a></li>
+            <li><a href="#demo-page2">Canteen</a></li>
+            <li><a href="#demo-page3">Futures</a></li>
+			<li><a href="#demo-page4">Contact us</a></li>
+       
+		</ul>
+    </div>
+  
+     <div data-role="panel" data-position="right" data-display="reveal" data-theme="a" id="add-form14">
+        <form class="userform">
+            <h2>Login</h2>
+            <label for="name">Username:</label>
+            <input name="name" id="name" value="" data-clear-btn="true" data-mini="true" type="text">
+            <label for="password">Password:</label>
+            <input name="password" id="password" value="" data-clear-btn="true" autocomplete="off" data-mini="true" type="password">
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini">Cancel</a></div>
+                <div class="ui-block-b"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">Save</a></div>
+            </div>
+        </form>
+    </div><!-- /panel -->
+	<!-- /panel -->
+    
+    
+</div>
+
+
+<div data-url="panel-responsive-page1" data-role="page" class="jqm-demos ui-responsive-panel" id="demo-page4" data-title="Panel responsive page">
+    <!-- /header -->
+    <div data-role="header">
+        <h1>Sample Apps</h1>
+        <a href="#nav-panel5" data-icon="bars" data-iconpos="notext">Menu</a>
+        <a href="#add-form15" data-icon="gear" data-iconpos="notext">Add</a>
+   	</div>	
+    <!-- /header -->
+    <!--content--->
+  	<div data-role="content">
+   		<h3 style="color:#F00; margin-top:-7px;">Contact Us</h3>
+    	<p style="color:#007; text-align:justify;">I have an id of "one" on my page container. I'm first in the source order so I'm shown when the page loads.</p> 
+  		<img class="popphoto" src="images/map.png" style="height:298; width:100%;" alt="">
+        <p style="text-align:center; color:#F00;margin-bottom:-17px;">Annai salai road......</p>
+    	
+        <form class="userform">
+            <h2>Login</h2>
+            <label for="un" class="ui-hidden-accessible">Username:</label>
+            <input name="user" id="un" value="" placeholder="username" data-theme="a" type="text">
+            <label for="pw" class="ui-hidden-accessible">Password:</label>
+            <input name="pass" id="pw" value="" placeholder="password" data-theme="a" type="password">
+            <label for="un" class="ui-hidden-accessible">Phoneno:</label>
+            <input name="user" id="pw" value="" placeholder="Phoneno" data-theme="a" type="text">
+            <label for="un" class="ui-hidden-accessible">Emailid</label>
+            <input name="pass" id="pw" value="" placeholder="Emailid" data-theme="a" type="text">
+            <!--<button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">Sign in</button>-->
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini">Cancel</a></div>
+                <div class="ui-block-b"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">Save</a></div>
+            </div>
+        </form>
+         
+         
+      	<!--<a href="#popupLogin" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-transition="pop" style="margin-top:22px; margin-left:-16px; margin-right:-16px; width:91%; background-color:green; color:#FFF;">Contact Us</a>
+        <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+            <form>
+                <div style="padding:10px 20px;">
+                    <h3>Please sign in</h3>
+                    <label for="un" class="ui-hidden-accessible">Username:</label>
+                    <input name="user" id="un" value="" placeholder="username" data-theme="a" type="text">
+                    <label for="pw" class="ui-hidden-accessible">Password:</label>
+                    <input name="pass" id="pw" value="" placeholder="password" data-theme="a" type="password">
+                    <label for="un" class="ui-hidden-accessible">Phoneno:</label>
+                    <input name="user" id="pw" value="" placeholder="Phoneno" data-theme="a" type="text">
+                    <label for="un" class="ui-hidden-accessible">Emailid</label>
+                    <input name="pass" id="pw" value="" placeholder="Emailid" data-theme="a" type="text">
+                    <button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">Sign in</button>
+                </div>
+            </form>
+        </div>-->
+		
+		<a href="#demo-page3" id="demo-page" data-rel="back" data-ajax="false" style="background-color:#F84754; color:#FFF; margin-top:-6px; margin-left:-16px; margin-right:-16px;" class="ui-btn ui-corner-all">Back</a>       
+  
+    </div>
+  
+	<!-- /content -->
+    <div data-role="footer" style="margin-top:-24px;">
+    	<h4>Mobile application</h4>
+    </div>
+    
+    <div data-role="panel" data-display="push" data-theme="b" id="nav-panel5">
+        <ul data-role="listview">
+            <li data-icon="delete"><a href="#" data-rel="close" class="ui-btn ui-corner-all ui-shadow ui-mini ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-right">Close</a></li>
+            <li><a href="#demo-page1">About Us</a></li>
+            <li><a href="#demo-page2">Canteen</a></li>
+            <li><a href="#demo-page3">Futures</a></li>
+			<li><a href="#demo-page4">Contact us</a></li>
+       
+		</ul>
+    </div>
+  
+    <div data-role="panel" data-position="right" data-display="reveal" data-theme="b" id="add-form15">
+        <form class="userform">
+            <h2>Login</h2>
+            <label for="name">Username:</label>
+            <input name="name" id="name" value="" data-clear-btn="true" data-mini="true" type="text">
+            <label for="password">Password:</label>
+            <input name="password" id="password" value="" data-clear-btn="true" autocomplete="off" data-mini="true" type="password">
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini">Cancel</a></div>
+                <div class="ui-block-b"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">Save</a></div>
+            </div>
+        </form>
+    </div>
+	<!-- /panel -->
+    
+    
+</div>
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.js"></script>
+<script>
+function new_page() {
+	
+	$.mobile.changePage("ticket.html");
+    
+}
+
+function buy() {
+	
+	$.mobile.changePage("buysnacks.html");
+    
+}
+</script>
+
+<script>
+
+$( document ).on( "pagecreate", "#demo-page", function() {
+    $( document ).on( "swipeleft swiperight", "#demo-page", function( e ) {
+        // We check if there is no open panel on the page because otherwise
+        // a swipe to close the left panel would also open the right panel (and v.v.).
+        // We do this by checking the data that the framework stores on the page element (panel: open).
+        if ( $( ".ui-page-active" ).jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swipeleft" ) {
+                $( "#right-panel" ).panel( "open" );
+            } else if ( e.type === "swiperight" ) {
+                $( "#left-panel" ).panel( "open" );
+            }
+        }
+    });
+});
+</script>
+
+</body>
+</html>

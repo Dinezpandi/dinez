@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mobile Application</title>
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+
+<style>
+.ui-content1 {
+    border-width: 0 !important;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+    padding: 0 !important;
+}
+</style>
+
+</head>
+<body>
+
+<div data-url="Bookticket" data-role="page" class="jqm-demos ui-responsive-panel" id="page3" data-title="Panel responsive page">
+    <!-- /header -->
+    <div data-role="header" data-position="fixed" data-theme="b" style="background-color:#000097; color:#FFF;">
+        <h1>Ticket New</h1>
+        <a href="#nav3" data-icon="bars" data-iconpos="notext">Menu</a>
+        <a href="#add3" data-icon="gear" data-iconpos="notext">Add</a>
+    </div>	
+    <!-- /header -->
+    <!--content--->
+  	<div data-role="content" class="ui-content1">
+    	<a href="#pa11" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="images/snacks1.png" style="width:32%; height:100px;" alt=""></a>
+        <a href="#pa22" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="images/snacks2.png" style="width:32%; height:100px;" alt=""></a>
+        <a href="#pa33" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="images/snacks3.png" style="width:32%; height:100px;" alt=""></a>
+        
+        <div data-role="popup" id="pa11" data-overlay-theme="b" data-theme="b" data-corners="false">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img class="popphoto" src="images/snacks1.png" style="width:100%; height:200px;" alt="">
+        </div>
+        <div data-role="popup" id="pa22" data-overlay-theme="b" data-theme="b" data-corners="false">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img class="popphoto" src="images/snacks2.png" style="width:100%; height:200px;" alt="">
+        </div>
+        <div data-role="popup" id="pa33" data-overlay-theme="b" data-theme="b" data-corners="false">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img class="popphoto" src="images/snacks3.png" style="width:100%; height:200px;" alt="">
+        </div>
+        <!--Images codeing-->
+        
+        
+	  	<!---sample--->
+       
+        <!--<a href="#popupCloseRight" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">9AM</a>
+        <a href="#popupCloseLeft" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">1AM</a>
+        <a href="#popupUndismissible" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">6PM</a>
+        <a href="#popupUndismissible1" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">9PM</a>
+        <div data-role="popup" id="popupCloseRight" class="ui-content" style="max-width:280px">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+        <p>I have a close button at the top right corner with simple HTML markup.</p>
+        </div>
+        <div data-role="popup" id="popupCloseLeft" class="ui-content" style="max-width:280px">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+        <p>I have a close button at the top left corner with simple HTML markup.</p>
+        </div>
+        <div data-role="popup" id="popupUndismissible" class="ui-content" style="max-width:280px" data-dismissible="false">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+        <p>I have the <code>data-dismissible</code> attribute set to <code>false</code>. I'm not closeable by clicking outside of me.</p>
+        </div>
+        <div data-role="popup" id="popupUndismissible1" class="ui-content" style="max-width:280px" data-dismissible="false">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+        <p>I have the <code>data-dismissible</code> attribute set to <code>false</code>. I'm not closeable by clicking outside of me.</p>
+        </div>-->
+        <!---sample--->
+        
+
+        
+        <h2 style="font-size:15px; color:red;">BUY Snacks</h2>
+        
+        <form class="userform">
+            <h2>Booking</h2>
+            <!--<label for="name">Username:</label>
+            <input name="name" id="name" value="" data-clear-btn="true" data-mini="true" type="text">
+            <label for="password">Password:</label>
+            <input name="password" id="password" value="" data-clear-btn="true" autocomplete="off" data-mini="true" type="password">-->
+            <label for="name">Select Snacks:</label>
+            <select id="name" value="select" data-clear-btn="true" data-mini="true" >
+        		<option>jhj</option>
+        		<option>jkhb</option>
+       			<option>ewre</option>
+        		<option>ljh</option>
+                <option>piiu</option>
+        		<option>zvxfb</option>
+       			<option>klhhg</option>
+        		<option>adfd</option>
+      		</select>
+            <label for="name">Select Item</label>
+            <select id="name" value="select" data-clear-btn="true" data-mini="true" >
+        		<option>1</option>
+        		<option>2</option>
+       			<option>3</option>
+        		<option>4</option>
+      		</select>
+            <label for="name">Select Amount</label>
+            <select id="name" value="select" data-clear-btn="true" data-mini="true" >
+        		<option>I &nbsp;&#2352;&nbsp;150</option>
+        		<option>II&nbsp;&#2352;&nbsp;120</option>
+       			<option>II&nbsp;&#2352;&nbsp;100</option>
+        		<option>II&nbsp;&#2352;&nbsp;80</option>
+      		</select>
+            <label for="name">Date:</label>
+            <input name="name" id="name" value="" data-clear-btn="true" data-mini="true" type="date">
+            <label for="name">Phone Number:</label>
+            <input name="name" id="name" value="" data-clear-btn="true" data-mini="true" type="tel">
+            <br />
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini">Cancel</a></div>
+                <div class="ui-block-b"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">Save</a></div>
+            </div>
+        </form>
+		
+		
+        <a href="#demo-page2" style="background-color:#F84754; color:#FFF;" class="ui-btn ui-corner-all">Back</a>
+        
+    </div>
+	<!-- /content -->
+    <div data-role="footer" style="margin-top:-9px;">
+    	<h4>Mobile application</h4>
+    </div>
+   <div data-role="panel" data-display="push" data-theme="b" id="nav3">
+        <ul data-role="listview">
+            <li data-icon="delete"><a href="#" data-rel="close">Close</a></li>
+            <li><a href="#demo-page1">About Us</a></li>
+            <li><a href="#demo-page2">Canteen</a></li>
+            <li><a href="#demo-page3">Futures</a></li>
+			<li><a href="#demo-page4">Contact us</a></li>
+            
+		</ul>
+    </div><!-- /panel -->
+    
+    <div data-role="panel" data-position="right" data-display="reveal" data-theme="a" id="add3">
+        <form class="userform">
+            <h2>Login</h2>
+            <label for="name">Username:</label>
+            <input name="name" id="name" value="" data-clear-btn="true" data-mini="true" type="text">
+            <label for="password">Password:</label>
+            <input name="password" id="password" value="" data-clear-btn="true" autocomplete="off" data-mini="true" type="password">
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini">Cancel</a></div>
+                <div class="ui-block-b"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">Save</a></div>
+            </div>
+        </form>
+    </div><!-- /panel -->
+</div>
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.js"></script>
+</body>
+</html>
